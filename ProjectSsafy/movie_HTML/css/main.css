@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* 박스의 크기 결정법을 설정 */
+    box-sizing: border-box;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.movie-card__info > h2{
+    border-bottom: 1px solid gray;
+    color: gray;
+}
+.wrapper {
+  width: min(60%, 1300px);
+  margin: 0 auto;
+}
+
+.movie-card{
+    padding: 7px;
+}
+.header {
+    height: 70px;
+    background-color: aqua;
+    color: white;
+    padding: 0px 30px;
+    border-radius: 10px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    line-height: 70px;
+    font-size: 1.25rem;
+}
+
+.search-form__input {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    width: 500px;
+    outline: none;
+}
+
+.search-form__button{
+    padding: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.search-form__button:hover{
+    background-color: black;
+    color: white;
+}
+
+.main-layout{
+    width: 90%;
+    display: flex;
+}
+
+.movie-list{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.movie-sidebar{
+    width: 17%;
+    margin-top: 30px;
+    position: sticky;
+}
+
+.footer{
+  background-color: #03dbfc;
+  color: white;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 10px;
+
+}
+
+.footer__nav{
+    display: flex;
+    justify-content: space-around;
+}
+
+.movie-card {
+  position: relative; /* 부모 기준점 설정 */
+}
+
+.movie-card__bookmark {
+  position: absolute;
+  top: 420px;        /* 위에서 10px */
+  right: 10px;      /* 오른쪽에서 10px */
+  padding: 5px;
+  font-size: 1.25rem;
+}

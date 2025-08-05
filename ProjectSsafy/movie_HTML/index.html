@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie</title>
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!-- Header -->
+        <header class="header">
+            <nav class="nav">
+                <div class="nav__logo">
+                    <a href="#">영화관리</a>
+                </div>
+                <div class="nav__search">
+                    <form class="search-form" action="#">
+                        <input class="search-form__input" type="text" placeholder="제목을 입력하세요." />
+                        <button class="search-form__button" type="submit">검색</button>
+                    </form>
+                </div>
+                <div class="nav__actions">
+                    <a class="nav__link" href="#">로그인</a>
+                    <a class="nav__link" href="#">로그아웃</a>
+                    <a class="nav__link" href="#">회원가입</a>
+                    <a class="nav__link" href="#">게시판</a>
+                    <a class="nav__link" href="#">마이페이지</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Layout -->
+        <main class="main-layout">
+
+            <!-- Movie List Section -->
+            <section class="movie-list-section">
+                <h1 class="movie-list-section__title">영화목록</h1>
+                <ul class="movie-list">
+                    <li class="movie-card">
+                        <img class="movie-card__poster" src="img/eternals.jpg" alt="이터널스" />
+                        <div class="movie-card__info">
+                            <h2>이터널스</h2>
+                            <p>장르: 액션</p>
+                            <p>감독: 클로이 자오</p>
+                            <p>러닝타임: 155분</p>
+                        </div>
+                        <button class="movie-card__bookmark">찜</button>
+                    </li>
+                    <li class="movie-card">
+                        <img class="movie-card__poster" src="img/dune.jpg" alt="듄" />
+                        <div class="movie-card__info">
+                            <h2>듄</h2>
+                            <p>장르: 모험</p>
+                            <p>감독: 드니 뷜뇌브</p>
+                            <p>러닝타임: 155분</p>
+                        </div>
+                        <button class="movie-card__bookmark">찜</button>
+                    </li>
+                    <li class="movie-card">
+                        <img class="movie-card__poster" src="img/venom.jpg" alt="베놈 2: 렛 데어 비 카니지" />
+                        <div class="movie-card__info">
+                            <h2>베놈 2: 렛 데어 비 카니지</h2>
+                            <p>장르: 액션</p>
+                            <p>감독: 앤디 서키스</p>
+                            <p>러닝타임: 97분</p>
+                        </div>
+                        <button class="movie-card__bookmark">찜</button>
+                    </li>
+                    <li class="movie-card">
+                        <img class="movie-card__poster" src="img/parasite.jpg" alt="기생충" />
+                        <div class="movie-card__info">
+                            <h2>기생충</h2>
+                            <p>장르: 드라마</p>
+                            <p>감독: 봉준호</p>
+                            <p>러닝타임: 131분</p>
+                        </div>
+                        <button class="movie-card__bookmark">찜</button>
+                    </li>
+                    <li class="movie-card">
+                        <img class="movie-card__poster" src="img/harrypoter_stone.jpg" alt="해리포터와 마법사의 돌" />
+                        <div class="movie-card__info">
+                            <h2>해리포터와 마법사의 돌</h2>
+                            <p>장르: 판타지</p>
+                            <p>감독: 크리스 콜럼버스</p>
+                            <p>러닝타임: 152분</p>
+                        </div>
+                        <button class="movie-card__bookmark">찜</button>
+                    </li>
+                    <li class="movie-card">
+                        <img class="movie-card__poster" src="img/harrypoter_room.jpg" alt="해리포터와 비밀의 방" />
+                        <div class="movie-card__info">
+                            <h2>해리포터와 비밀의 방</h2>
+                            <p>장르: 판타지</p>
+                            <p>감독: 크리스 콜럼버스</p>
+                            <p>러닝타임: 162분</p>
+                        </div>
+                        <button class="movie-card__bookmark">찜</button>
+                    </li>
+                    <li class="movie-card">
+                        <img class="movie-card__poster" src="img/load_of_ring.jpg" alt="반지의제왕: 왕의 귀환" />
+                        <div class="movie-card__info">
+                            <h2>반지의제왕: 왕의 귀환</h2>
+                            <p>장르: 판타지</p>
+                            <p>감독: 피터 잭슨</p>
+                            <p>러닝타임: 263분</p>
+                        </div>
+                        <button class="movie-card__bookmark">찜</button>
+                    </li>
+                    <li class="movie-card">
+                        <img class="movie-card__poster" src="img/tomb_of_the_river.jpg" alt="강릉" />
+                        <div class="movie-card__info">
+                            <h2>강릉</h2>
+                            <p>장르: 범죄</p>
+                            <p>감독: 윤영빈</p>
+                            <p>러닝타임: 119분</p>
+                        </div>
+                        <button class="movie-card__bookmark">찜</button>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Sidebar -->
+            <aside class="movie-sidebar">
+                <h2 class="movie-sidebar__title">찜 리스트</h2>
+                <div class="movie-sidebar__empty">아직 찜한 영화 없습니다...</div>
+            </aside>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <nav class="footer__nav">
+                <a class="footer__link" href="#">개인정보처리방침</a>
+                <a class="footer__link" href="#">이용약관</a>
+                <a class="footer__link" href="#">오시는길</a>
+                <div class="footer__copyright">
+                    SSAFY 서울_9반_장세현
+                </div>
+            </nav>
+
+        </footer>
+
+    </div>
+</body>
+
+</html>

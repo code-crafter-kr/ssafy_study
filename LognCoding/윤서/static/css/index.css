@@ -1,0 +1,55 @@
+/* css/index.css */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f9fb;
+  color: #333;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('{{ url_for("static", filename="images/login_bg.jpg") }}')
+    no-repeat center center / cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.6)
+  );
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+  padding: 3rem;
+  max-width: 720px;
+  backdrop-filter: blur(6px);
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  color: #e0e0e0;
+}
+
+.hero-content .btn {
+  margin-top: 2rem;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+}
