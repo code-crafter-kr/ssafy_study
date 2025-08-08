@@ -41,7 +41,8 @@
       console.log("style(property): ", button.style);
 
       //TODO: 01. button의 스타일을 변경해보세요.
-
+      button.setAttribute("style", button.getAttribute("style" + ";color:blue"));
+      button.style["border"] = "1px solid blue";
       // END
 
       const styles = getComputedStyle(button);
@@ -52,7 +53,8 @@
       const source = event.target;
       console.log(source, source.checked, source.getAttribute("checked"));
       //TODO: 02. checkbox의 상태에 따라 이미지를 보이거나 숨기도록 구현해보세요.
-
+      const img = document.querySelector(`img[alt='${source.id}']`)
+      console.log(img);
       //END
     };
   </script>

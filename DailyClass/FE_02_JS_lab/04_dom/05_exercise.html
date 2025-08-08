@@ -1,26 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      .container > div {
-        margin-bottom: 10px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div>
-        <label>친구이름 </label><input type="text" /> <button onclick="addRow()">+</button
-        ><button onclick="removeRow()">-</button>
-      </div>
-    </div>
-  </body>
-  <script>
-    //TODO: addRow와 removeRow를 구현해보세요.
 
-    //END
-  </script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .container>div {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div>
+      <label>친구이름 </label>
+      <input type="text" />
+      <button onclick="addRow()">+</button>
+      <button onclick="removeRow()">-</button>
+    </div>
+  </div>
+</body>
+<script>
+  //TODO: addRow와 removeRow를 구현해보세요.
+  const addRow = () => {
+    const parent = event.target.parentElement;
+    const cloned = parent.cloneNode(true);
+    cloned.querySelector("input").value = "";
+    parent.after(cloned);
+  }
+
+  const removeRow = () => {
+    const parent = event.target.parentElement;
+    if(parent.closest(".container").children.length > 1){
+    parent.remove();
+    }
+  }
+
+  //END
+</script>
+
 </html>

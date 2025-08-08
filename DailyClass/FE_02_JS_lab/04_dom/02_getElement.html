@@ -23,21 +23,33 @@
     console.log(idNode instanceof HTMLInputElement, idNode);
     console.log("부모노드: ", idNode.parentNode);
 
-    //TODO: 01. 화면에서 input 요소들을 가져와서 nodeType과 nodeName를 출력해보자.
+    // //TODO: 01. 화면에서 input 요소들을 가져와서 nodeType과 nodeName를 출력해보자.
+    // let inputs = document.getElementById("input");
+    // for (let input of inputs){
+    //   console.log(input.nodeType, input.nodeName);
+    // }
 
-    //END
+    // document.querySelectorAll("input").forEach((item) => console.log(item.nodeType, item.nodeName))
+    // //END
 
-    //TODO: 02. .input-label 요소들을 가져와서 출력해보자.
-    //TODO: 03. 화면에서 required 속성이 있는 요소들을 가져와서 정보를 출력해보자.
+    // //TODO: 02. .input-label 요소들을 가져와서 출력해보자.
+    // document.querySelectorAll("input-label").forEach((item) => console.log(item.nodeType, item.nodeName))
+    
+    // //TODO: 03. 화면에서 required 속성이 있는 요소들을 가져와서 정보를 출력해보자.
+    // document.querySelectorAll("[required]").forEach((item) => console.log(item.nodeType, item.nodeName))
 
-    //END
+    // //END
 
     //TODO: 04. [Login]을 클릭했을 때 그 버튼이 속한 form 정보를 조회해보자.
-
+    const login = () => {
+      const source = event.target;
+      console.log(source);
+    }
     //END
 
-    //TODO: 05. legend 태그의 nextSibling과 nextElementSibling을 출력해보세요.
-
-    //END
+    // //TODO: 05. legend 태그의 nextSibling과 nextElementSibling을 출력해보세요.
+    // const legend = document.querySelector("legend");
+    // console.log(legend.nextSibling, legendnextElementSibling)
+    // //END
   </script>
 </html>

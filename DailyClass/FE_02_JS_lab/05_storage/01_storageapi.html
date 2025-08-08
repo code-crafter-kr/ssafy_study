@@ -13,18 +13,27 @@
     <script>
       const storage = window.localStorage;
       //TODO: 03. localStorage에 favorite 키로 저장된 색상이 있다면, body의 배경색을 변경하세요.
+      const savedColor = localStorage.getItem("favorite");
+      if (savedColor){
+        document.querySelector("body").style.background = savedColor;
+        const color = document.querySelector("#colorPicker").value = savedColor; // 해당 id에 묶인 색깔 가져오기
 
+      }
       //END
 
       const saveBgColor = () => {
         //TODO: 01. localStorage에 favorite 키로 colorPicker의 값을 저장하고, body의 배경색을 변경하세요.
+        const color = document.querySelector("#colorPicker").value; // 해당 id에 묶인 색깔 가져오기
+        storage.setItem("favorite", color);
+        document.querySelector("body").style.background = color;
 
         //END
       };
 
       const removeBgColor = () => {
         //TODO: 02. localStorage에서 favorite 키를 삭제하고, body의 배경색을 초기화하세요.
-
+        storage.removeItem("favorite");
+        document.querySelector("body").style.background = "white";
         //END
       };
     </script>

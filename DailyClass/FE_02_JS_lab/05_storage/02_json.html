@@ -30,13 +30,18 @@
       };
       console.log(newUser, newUser.toString());
       //TODO: 01. newUser를 JSON 문자열로 변환하여 localStorage에 저장하세요.
-
+        const newUserJson = JSON.stringify(newUser);
+        storage.setItem("newUser", newUserJson)
       //END
     };
 
     const load = () => {
       //TODO: 02. localStorage에서 user 키로 저장된 값을 가져와서 화면에 반영하세요.
-
+        const storedUser = JSON.parse(storage.getItem("newUser"));
+        document.querySelector("#name").value = storedUser.name;
+        document.querySelector("#age").value = storedUser.age;
+        document.querySelector("#isAdmin").checked = storedUser.isAdmin;
+        document.querySelector("#courses").value = storedUser.courses;
       //END
     };
   </script>

@@ -37,13 +37,18 @@
       const baseDiv = document.querySelector("#base");
 
       //TODO: 01. 다양한 삽입 위치를 확인해보세요.
-             divStore.prepend(newDiv);
-
+      divStore.prepend(newDiv);
+      divStore.append(newDiv);
+      baseDiv.before(newDiv);
+      baseDiv.after(newDiv);
       // END
     };
 
     // TODO: 02. innerHTML을 이용해서 새로운 div를 추가해보자.
-
+    const moreSimpleAdd = () => {
+      const html = `<div style='background:red'>text</div>`;
+      document.querySelector("#div-store").innerHTML += html;
+    }
     //END
   </script>
 </html>
