@@ -25,7 +25,7 @@ a {
 }
 .header {
     height: 70px;
-    background-color: aqua;
+    background-color: aqua; 
     color: white;
     padding: 0px 30px;
     border-radius: 10px;
