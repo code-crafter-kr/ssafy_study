@@ -1,4 +1,5 @@
 # app.py
+# app.py
 import os
 import requests
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
@@ -6,13 +7,9 @@ from flask import Flask, render_template, request, redirect, url_for, session, j
 app = Flask(__name__)
 app.secret_key = os.environ.get("FLASK_SECRET_KEY", "your-secret-key")
 
-
-
-# Extract the API key for use in your Flask app
-FIREBASE_API_KEY = firebase_config["apiKey"]
-# Firebase REST endpoints
-
-SIGN_IN_URL = (
+# Firebase Auth REST API endpoints
+FIREBASE_API_KEY = os.environ.get("FIREBASE_API_KEY")
+FIREBASE_AUTH_URL = (
     f"https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key={FIREBASE_API_KEY}"
 )
 SIGN_UP_URL = (
