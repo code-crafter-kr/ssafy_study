@@ -1,50 +1,55 @@
-
 import java.util.*;
 import java.io.*;
 
 public class P1325 {
-    public static int[] result;
-    public static void main(String[] args) throws IOException{
+    public static int maximum = -1;
+    public static StringBuilder sb = new StringBuilder();
+
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("input.txt")));
-        StringBuilder sb = new StringBuilder();
         StringTokenizer st = new StringTokenizer(br.readLine());
 
         int N = Integer.parseInt(st.nextToken());
         int M = Integer.parseInt(st.nextToken());
-        result = new int[N];
 
-        HashSet<Integer>[] graph = new HashSet[N + 1];
+        ArrayList<Integer>[] graph = new ArrayList[N + 1];
         for (int i = 0; i <= N; i++) {
-            graph[i] = new HashSet<>();
+            graph[i] = new ArrayList<>();
         }
 
-
-        for (int i = 0; i < M; i++){
+        for (int i = 0; i < M; i++) {
             st = new StringTokenizer(br.readLine());
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
-            graph[a].add(b); // 일방적 신뢰관계
+            graph[b].add(a); // A가 B를 신뢰 → B 해킹 시 A도 해킹 (역방향 저장)
         }
 
-        for (int i = 1; i <= N; i++){
-            if (result[i] == 0) continue;
-            bfs(i);
-        } 
+        for (int start = 1; start <= N; start++) {
+            boolean[] vis = new boolean[N + 1];
+            ArrayDeque<Integer> q = new ArrayDeque<>();
+            int cnt = 1;
 
-        // result의 맥스값을 찾은 뒤 그 맥스값으로 답 출력
-        int max_num = Integer.MIN_VALUE;
-        for (int x : result){
-            if (max_num < x) max_num = x;
+            vis[start] = true;
+            q.addLast(start);
+
+            while (!q.isEmpty()) {
+                int cur = q.pollFirst();
+                for (int nxt : graph[cur]) {
+                    if (vis[nxt]) continue;
+                    vis[nxt] = true;
+                    cnt++;
+                    q.addLast(nxt);
+                }
+            }
+
+            if (maximum < cnt) {
+                maximum = cnt;
+                sb = new StringBuilder().append(start).append(" ");
+            } else if (maximum == cnt) {
+                sb.append(start).append(" ");
+            }
         }
 
-        for (int i = 1; i <= N; i++){
-            if (result[i] == max_num) sb.append(i + " ");
-        }
-
-        System.out.println(sb);
-    }
-    public static void bfs(int start){
-        // bfs로 해당 노드 스타트로 나온 결과를 visited 노드에게 전부 매핑해줌.
-
+        System.out.println(sb.toString().trim());
     }
 }
