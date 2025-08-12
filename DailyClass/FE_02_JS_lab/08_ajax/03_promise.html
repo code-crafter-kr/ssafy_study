@@ -1,18 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>promise</title>
-  </head>
-  <body></body>
-  <script>
-    //TODO: 01. Promise를 이용하여 2초 후에 성공 또는 실패를 처리하는 코드를 작성하시오.
 
-    //END
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>promise</title>
+</head>
 
-    //TODO: 02. Promise의 성공과 실패를 처리하는 코드를 작성하시오.
+<body></body>
+<script>
+  //TODO: 01. Promise를 이용하여 2초 후에 성공 또는 실패를 처리하는 코드를 작성하시오.
+  const myPromise = new Promise((onfulfilled, onrejected) => { // 실패를 부르는
+    setTimeout(() => {
+      console.log("1");
+      const randomValue = Math.random();
+      if(randomValue > 0.5){
+        console.log("성공");
+        onfulfilled("성공" + randomValue); // 성공을 부르는
+      } else{
+        console.log("실패");
+        onrejected("실패" + randomValue);
+      }
+    }, 2 * 1000);
+  });
+  //END
+  console.log(myPromise);
+  //TODO: 02. Promise의 성공과 실패를 처리하는 코드를 작성하시오.
+  myPromise.then((value) => {
+    console.log("consuming 1", value);
+  }).catch((reason)=>{
+    console.log("consuming 2", reason);
+  }).finally(()=>{
+    console.log("consuming 3 결국은...");
+  });
+  //END
+</script>
 
-    //END
-  </script>
 </html>

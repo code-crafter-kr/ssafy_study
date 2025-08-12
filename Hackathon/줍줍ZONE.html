@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>하이라이트 절반 이상 커버</title>
+<style>
+  :root {
+    --bar-color: #cdb9ff; /* 하이라이트 색상 */
+    --bar-height: 14px;   /* 하이라이트 두께 */
+  }
+
+  body {
+    font-family: "Pretendard","Noto Sans KR",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    padding: 40px;
+  }
+
+  .zone {
+    position: relative;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #2b2f39;
+  }
+
+  .zone::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: var(--bar-height);
+    bottom: 0;
+    transform: translateY(30%); /* 더 많이 위로 올림 */
+    background: var(--bar-color);
+    z-index: -1;
+  }
+</style>
+</head>
+<body>
+  <h2 class="zone">제휴혜택ZONE</h2>
+</body>
+</html>

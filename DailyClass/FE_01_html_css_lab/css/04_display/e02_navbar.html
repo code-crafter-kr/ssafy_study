@@ -1,27 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      /* TODO: 01. list-item을 이용해서 nav menu를 만들어보자.*/
 
-      /* END */
-    </style>
-  </head>
-  <body>
-    <ul class="nav">
-      <li>elements</li>
-      <li>consol</li>
-      <li>sources</li>
-      <li>network</li>
-      <li>performance</li>
-    </ul>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* TODO: 01. list-item을 이용해서 nav menu를 만들어보자.*/
+    .nav {
+      display: flex;
+      justify-content: space-around;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav li {
+      cursor: pointer;
+      /* 마우스 포인터 변경 */
+      padding: 8px 16px;
+    }
+
+    .nav li:hover {
+      background-color: lightgray;
+    }
+
+    /* END */
+  </style>
+</head>
+
+<body>
+  <ul class="nav">
+    <li>elements</li>
+    <li>consol</li>
+    <li>sources</li>
+    <li>network</li>
+    <li>performance</li>
+  </ul>
+</body>
+
 </html>
