@@ -1,9 +1,7 @@
-package main;
-
 import java.util.*;
 import java.io.*;
 
-public class Main {
+public class JUN3055_Escape_장세현 {
 	static int answer;
 	static int N;
 	static int M;
